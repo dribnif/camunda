@@ -1,7 +1,7 @@
 # The camunda bpm repository
 This repo currently contains the camunda SQL connector.
 
-##Overview: Camunda SQL Connector
+## Overview: Camunda SQL Connector
 The Camunda SQL Connector is a simple Maven project that produces a .jar file, which contains a camunda bpm 
 connector that can be picked up by any camunda runtime, as long as it is within its classpath. 
 
@@ -12,8 +12,8 @@ supplying the connector with the appropriate query. The connector executes the q
 evaluates the results, serialises them to the best of its abilities and returns a JSON-Formatted representation to the 
 process (service) task that invoked it.  
 
-##How to use
-###Building
+## How to use
+### Building
 In order to use this connector you first have to build it. To to this, simply clone the repository 
 onto your own machine and build with Maven from command line:
 ```
@@ -21,13 +21,13 @@ git clone https://github.com/dribnif/camunda.git
 cd camunda-sql-connector
 mvn clean install
 ``` 
-###Deployment and dependencies
+### Deployment and dependencies
 This will create both the jar file called **target/sql-connector-{VERSION}.jar** as well as a folder **lib/** 
 containing all the dependencies of the connector. 
 
 Place *all of these jars* somewhere within the classpath of a camunda runtime.
 
-###JDBC Driver
+### JDBC Driver
 Depending on the database that 
 your SQL-Connector will interact with, you also need the appropriate JDBC driver. *(In order to connect to a current Oracle
 DB for example, download the file ojdbc6.jar  from here:
@@ -35,7 +35,7 @@ http://www.oracle.com/technetwork/database/features/jdbc/jdbc-drivers-12c-downlo
 
 Place this jar in the classpath as well. 
 
-###DB Connection config
+### DB Connection config
 The final bit needed to enable the connector, is the DB connection config. 
 There are 3 different ways of supplying the connector with this information:
 
@@ -82,11 +82,11 @@ The connector will first attempt to use the configuration supplied via input par
 look for the JNDI name parameter in the request. If this also fails, it defaults to the config.properties file. 
 
 
-###And you're done
+### And you're done
 Now (re)start the container. In case of a camunda bpm installation bundled with Tomcat, these can be placed in the 
 *tomcat/lib* folder.  
   
-###Using it
+### Using it
 The SQL connector can then be referenced via it's unique **connector id** from any service task of a camunda BPM process. The connector id 
 of the camunda connector is 
 
